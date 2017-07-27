@@ -1,14 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'gradleproject'
-            keyPassword 'password'
-            storeFile file('/home/lara/Desktop/signingDemo/gradlekeystore.jks')
-            storePassword 'password'
-        }
-    }
+
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
     defaultConfig {
@@ -23,19 +16,18 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
+
         }
     }
     productFlavors {
         free {
-            applicationIdSuffix ".free"
-            versionNameSuffix "-free"
+            applicationId "com.example.ayaali.builditbigger.free"
         }
         paid {
-            applicationIdSuffix ".paid"
-            versionNameSuffix "-paid"
+            applicationId "com.example.ayaali.builditbigger"
         }
     }
+
 }
 
 dependencies {
@@ -45,7 +37,7 @@ dependencies {
     })
     compile project(':myandroidlibrary')
     compile 'com.android.support:appcompat-v7:25.0.3'
-    freeCompile 'com.google.android.gms:play-services-ads:10.2.1'
+    freeCompile 'com.google.android.gms:play-services-ads:9.4.0'
     compile 'com.google.code.findbugs:jsr305:2.0.1'
     compile project(path: ':backend', configuration: 'android-endpoints')
     compile 'com.google.http-client:google-http-client-android:1.12.0-beta'
