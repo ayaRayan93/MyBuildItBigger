@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.myandroidlibrary.DisplayJoke;
-import com.google.android.gms.ads.MobileAds;
+
 
 public class MainActivity extends AppCompatActivity implements jokeTeller{
 
@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity implements jokeTeller{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MobileAds.initialize(this, "ca-app-pub-1266428039068299~1512693161");
     }
 
     @Override
